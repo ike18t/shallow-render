@@ -97,6 +97,10 @@ describe('QueryMatch', () => {
       emptyMatch = createQueryMatch<Foo>([]);
     });
 
+    fit('passes a falsy check', () => {
+      expect(emptyMatch).toBeFalsy();
+    });
+
     it('throws an error on instanceof checks', () => {
       expect(() => emptyMatch instanceof Foo).toThrow(new NoMatchesError('prototype'));
     });
